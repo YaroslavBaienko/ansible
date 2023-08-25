@@ -20,3 +20,13 @@
         status_code: 200
       register: result
       failed_when: "'200' not in result.status|string"
+      
+    - name: Проверить, что Nginx работает
+      command: curl -I 127.0.0.1
+      register: result
+      ignore_errors: yes
+
+    - name: Вывести результат проверки
+      debug:
+        var: result.stdout_lines
+

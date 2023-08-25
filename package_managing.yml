@@ -1,0 +1,9 @@
+---
+- name: Управление пакетами
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Установить htop
+      apt:
+        name: htop
+        state: present

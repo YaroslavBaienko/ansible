@@ -1,0 +1,13 @@
+---
+- name: Удалить пакет
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Удалить htop
+      apt:
+        name: htop
+        state: absent
+
+
+
+
